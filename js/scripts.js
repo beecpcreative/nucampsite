@@ -8,9 +8,10 @@ $(function() {
     });
 });
 $(function() {
-    $(".btn").click(function(){
-        $("#reserveButton").modal('show');
+    $("#reserveButton").click(function () {
+        $(".modal").modal("show");
     });
-    $(".btn").click(function(){
-        $("#loginButton").modal('show');
+    $("#loginButton").click(function(){
+        $(".modal").modal("show");
+    });
 });
