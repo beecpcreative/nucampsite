@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Project</title>
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <!-- Additional CSS must be placed after Bootstrap CSS -->
     <!-- build:css css/main.css -->
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
-    <link rel="stylesheet" href="css\projectstyles.scss" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- endbuild -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" />
 
+    <title>Portfolio Project</title>
 </head>
 
 <body>
-    <header class="jumbotron jumbotron-fluid>
+
+    <header class="jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col-4 col-sm-3 col-md-2 align-items-center">
+                <div class="col-4 col-sm-3 col-md-2 align-self-center">
                     <img src="img/projectimages/logo.jpg" class="img-fluid" />
                 </div>
                 <div class="col">
@@ -30,23 +31,82 @@
                     <h2>a healing blend of ecotherapy, yoga, and meditation</h2>
                 </div> 
                 
+                <div class="col-md-4 col-xl-2 mt-4">
+                    <button type="button" class="btn btn-lg btn-info" id="reserveButton"  title="Or call us at <br/><strong>1-214-555-1234</strong>">Register</button>
+                </div>
+
+                
     </header>
+
+    <div id="reserveButton" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Class Registration</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form>
+                                <form id="reserveForm">
+                                    <div class="form-group row">
+                                        <label for="numCampers" class="col-sm-6 col-form-label">Number of Yogis</label>
+                                        <!-- Select Dropdown -->
+                                        <div class="col">
+                                            <select name="numYogis" id="numYogis" class="form-control">
+                                                <option selected>Select...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Date -->
+                                    <div class="form-group row">
+                                        <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                        <div class="col">
+                                            <input type="date" class="form-control" id="date" name="date" placeholder="Date" />
+                                        </div>
+                                    </div>
+                                    
+                                                <div class="form-group row">
+                                                    <div class="col">
+                                                        <button type="submit" class="btn btn-primary">Search</button>
+                                                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                    </div>
+                                            </div> 
+                                        </div>
+                                    </label>
+                                </div> 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                                    
 
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#plantedNavbar">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#plantedNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#plantedNavbar">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#plantedNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nucampNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html"></a><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-info fa-lg"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"></a><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
                     </ul>
                     <span class="navbar-text ml-auto">
                         <a role="button" id="loginButton">
-                            <i class="fa fa-sign-in"></i> Planted Patron Login
+                            <i class="fa fa-sign-in"></i> My Planted Account
                         </a>
                     </span> 
             </div>
@@ -58,7 +118,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Planted Patron Login</h3>
+                    <h3 class="modal-title">Login</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                     <div class="modal-body">
@@ -67,7 +127,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <label class="sr-only" for="loginEmail">Email address</label>
-                                        <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                        <input type="email" class="form-control" form-control-sm" id="loginEmail" placeholder="Enter email">
                                     </div>
                                     <div class="form-group col-12">
                                         <label class="sr-only" for="loginPassword">Password</label>
@@ -90,35 +150,33 @@
             </div>
         </div>
     </div>
-
-    
-        <div class="row row-content align-items-center">
-            <div class="col-sm-4 order-sm-last col-md-3">
-                <h2 class="text-sm-right">Discover & Review</h2>
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img class="d-flex mr-3 img-thumbnail" src="img/breadcrumb-trail-thumb.jpg" alt="Breadcrumb Trail" />
-                    <div class="media-body align-self-center">
-                        <h3>Our Offerings</h3>
-                        <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
-                    </div>
+    <div class="container">
+        <div class="col">
+            <div class="col-md-8 mx-auto">
+    <div class="row row-content align-items-center">
+        <div class="col-sm-4 order-sm-last col-md-3">
+            <h2 class="text-sm-right">Our Offerings</h2>
+        </div>
+        <div class="col">
+            <div class="media">
+                <img class="d-flex mr-3 img-thumbnail" src="img/projectimages/updog.jpg" alt="Updog" />
+                <div class="media-body align-self-center">
+                    <h3>Experience variety</h3>
+                    <p class="d-none d-sm-block">Explore our growing database of curated campsites and leave your own reviews!</p>
                 </div>
             </div>
-    </div>
-
+        </div>
+</div>
     <div class="row row-content align-items-center">
         <div class="col-sm-4 col-md-3">
-            <h2>Featured Instructors</h2>
+            <h2>Our Instructors</h2>
         </div>
         <div class="col">
             <div class="media1">
-                <img style="float: right; margin: 0px 0px 30px 30px;" src="img/react-lake-thumb.jpg" width="200" />
-                <!-- <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="react lake" -->
-                <!--/ I couldn't figure out how to add the border to the picture, if that makes sense -->
+                <img class="d-flex mr-3 img-thumbnail" img style="float: right;" src="img/projectimages/handsatprayer.jpg"/>
             </div>
             <div class="media-body align-self-center">
-                <h3>React Lake Campground</h3>
+                <h3>Inclusive of Every Body</h3>
                 <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on
                     the shores of the pristine React Lake is a favorite for fly fishers.</p>
             </div>
@@ -131,9 +189,9 @@
         </div>
         <div class="col">
             <div class="media">
-                <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+                <img class="d-flex mr-3 img-thumbnail" src="img/projectimages/planted.jpg" alt="Bootstrap Outfitters" />
                 <div class="media-body align-self-center">
-                    <h3>Yogi Community</h3>
+                    <h3>Connected through community</h3>
                     <p class="d-none d-sm-block">Bootstrap Outfitters supplies you with gear you need at prices you can't beat.</p>
                 </div>
             </div>
@@ -161,7 +219,7 @@
                 <div class="col-sm-4 text-center">
                     <div class="col-sm-4 text-center">
                         <a role="button" class="btn btn-link" href="tel:+12145551234"><i class="fa fa-phone"></i> 1-214-555-1234</a><br />
-                        <a role="button" class="btn btn-link" href="mailto:namasteplanted@planted.co"><i class="fa fa-envelope-o"></i> namasteplanted@planted.co</a>
+                        <a role="button" class="btn btn-link" href="mailto:getplanted@planted.co"><i class="fa fa-envelope-o"></i> getplanted@planted.co</a>
                     </div>
         </div>
     </footer>
@@ -173,5 +231,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     <!-- endbuild -->
+    
 </body>
+
 </html>
